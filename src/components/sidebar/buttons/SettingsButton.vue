@@ -12,6 +12,6 @@ const router = useRouter();
     :to="{ name: 'settings' }"
   >
     <GearIcon class="size-5 me-1.5" />
-    <span>Settings</span>
+    <span class="pb-0.5">Settings</span>
   </Button>
 </template>

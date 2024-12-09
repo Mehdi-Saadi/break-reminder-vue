@@ -12,6 +12,6 @@ const router = useRouter();
     :to="{ name: 'break.messages' }"
   >
     <ChatBubbleIcon class="size-5 me-1.5" />
-    <span>Break Messages</span>
+    <span class="pb-0.5">Break Messages</span>
   </Button>
 </template>

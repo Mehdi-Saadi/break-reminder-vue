@@ -12,6 +12,6 @@ const router = useRouter();
     :to="{ name: 'advanced' }"
   >
     <DoubleArrowRightIcon class="size-5 me-1.5" />
-    <span>Advanced</span>
+    <span class="pb-0.5">Advanced</span>
   </Button>
 </template>
