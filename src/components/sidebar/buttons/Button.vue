@@ -11,7 +11,7 @@ defineProps<{
   <RouterLink
     :class="[active ? 'bg-[#eaeaea] dark:bg-[#2d2d2d] hover:bg-[#ededed] hover:dark:bg-[#292929]' : 'hover:bg-[#eaeaea] hover:dark:bg-[#2d2d2d]']"
     :to="to"
-    class="flex items-center pe-4 py-2 rounded-md text-sm font-semibold"
+    class="flex items-center pe-4 py-2 rounded-md text-sm"
   >
     <div
       v-show="active"
