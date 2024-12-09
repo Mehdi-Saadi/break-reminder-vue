@@ -18,7 +18,9 @@ const onInput = (event: Event): void => {
 
   target.value = target.value.replace(/\D/g, '');
 
-  if (Number(target.value) > props.max) {
+  if (!target.value) {
+    target.value = '0';
+  } else if (Number(target.value) > props.max) {
     target.value = target.value.slice(0, target.value.length - 1);
   }
 
@@ -30,11 +32,9 @@ const increase = (): void => {
 };
 
 const decrease = (): void => {
-  value.value = value.value - props.step;
+  const newVal = value.value - props.step;
 
-  if (value.value < 0) {
-    value.value = 0;
-  }
+  value.value = newVal < 0 ? 0 : newVal;
 };
 
 watch(value, () => emit('update', value.value));
@@ -43,7 +43,7 @@ watch(value, () => emit('update', value.value));
 <template>
   <div class="flex items-center border border-gray-300 rounded-md overflow-hidden">
     <input
-      v-model="value"
+      :value="value"
       class="h-6 w-9 focus:outline-0 px-1 bg-inherit border-e border-gray-300"
       type="text"
       @input="onInput"
