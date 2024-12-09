@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
-import GearIcon from '../../icons/GearIcon.vue';
 import Button from './Button.vue';
+import GearIcon from '../../icons/GearIcon.vue';
+import { useRouter } from 'vue-router';
 
 const router = useRouter();
 </script>
