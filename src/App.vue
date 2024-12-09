@@ -3,5 +3,10 @@
 </script>
 
 <template>
-  <div class="font-bold text-red-800">Hello world!</div>
+  <div
+    class="font-bold text-red-800"
+    id="myId"
+  >
+    Hello world!
+  </div>
 </template>
