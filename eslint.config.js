@@ -56,13 +56,6 @@ export default [
       'vue/html-indent': ['error', 2], // Enforce 2-space indent in templates
       'vue/singleline-html-element-content-newline': 'off', // Don't enforce newlines for single-line HTML elements
       'vue/multiline-html-element-content-newline': 'error', // Require newlines for multi-line HTML elements
-      'vue/max-attributes-per-line': [
-        'error',
-        {
-          singleline: 1, // One attribute per line for single-line elements
-          multiline: 1, // One attribute per line for multi-line elements
-        },
-      ],
       'vue/require-default-prop': 'off', // Disable required default props for Vue components
       'vue/no-multiple-template-root': 'off', // Allow multiple root nodes in Vue templates
     },
