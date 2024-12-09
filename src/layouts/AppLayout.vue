@@ -9,7 +9,7 @@ import Sidebar from './partials/Sidebar.vue';
       <Sidebar />
     </div>
 
-    <div class="col-span-2">
+    <div class="col-span-2 py-6 px-3">
       <RouterView />
     </div>
   </div>
