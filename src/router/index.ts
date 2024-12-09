@@ -1,3 +1,4 @@
+import Advanced from '../views/Advanced.vue';
 import AppLayout from '../layouts/AppLayout.vue';
 import BreakMessages from '../views/BreakMessages.vue';
 import Settings from '../views/Settings.vue';
@@ -19,6 +20,11 @@ const router = createRouter({
           path: '/break-messages',
           name: 'break.messages',
           component: BreakMessages,
+        },
+        {
+          path: '/advanced',
+          name: 'advanced',
+          component: Advanced,
         },
       ],
     },
