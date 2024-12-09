@@ -5,8 +5,40 @@ import SettingSection from '../components/setting/SettingSection.vue';
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col space-y-4">
     <SettingSection label="Short Breaks">
+      <SettingItem>
+        <template #text>
+          Interval between two breaks (in minutes)
+        </template>
+
+        <template #button>
+          <NumberField
+            :default-value="20"
+            :max="120"
+            :step="5"
+            @update="(newVal) => console.log(newVal)"
+          />
+        </template>
+      </SettingItem>
+
+      <SettingItem>
+        <template #text>
+          Break duration (in seconds)
+        </template>
+
+        <template #button>
+          <NumberField
+            :default-value="20"
+            :max="120"
+            :step="5"
+            @update="(newVal) => console.log(newVal)"
+          />
+        </template>
+      </SettingItem>
+    </SettingSection>
+
+    <SettingSection label="Long Breaks">
       <SettingItem>
         <template #text>
           Interval between two breaks (in minutes)
