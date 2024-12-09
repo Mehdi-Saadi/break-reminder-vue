@@ -5,6 +5,7 @@ import { ref, watch } from 'vue';
 
 const props = defineProps<{
   defaultValue: number;
+  disabled?: boolean;
   max: number;
   step: number;
 }>();
@@ -41,7 +42,10 @@ watch(value, () => emit('update', value.value));
 </script>
 
 <template>
-  <div class="flex items-center border border-gray-300 rounded-md overflow-hidden">
+  <div
+    :class="{ 'opacity-50': disabled }"
+    class="flex items-center border border-gray-300 rounded-md overflow-hidden relative"
+  >
     <input
       :value="value"
       class="h-6 w-9 focus:outline-0 px-1 bg-inherit border-e border-gray-300"
@@ -53,5 +57,10 @@ watch(value, () => emit('update', value.value));
       @click="decrease"
     />
     <AddButton @click="increase" />
+    <!-- disable layer -->
+    <div
+      v-show="disabled"
+      class="absolute size-full z-10"
+    />
   </div>
 </template>
