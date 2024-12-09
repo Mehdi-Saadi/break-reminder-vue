@@ -13,7 +13,7 @@ defineProps<{
     :to="to"
     class="flex items-center pe-4 py-2 rounded-md text-sm font-semibold"
   >
-    <span
+    <div
       v-show="active"
       class="min-w-0.5 min-h-4 max-w-0.5 max-h-4 bg-[#0067c0] rounded-full"
     />
