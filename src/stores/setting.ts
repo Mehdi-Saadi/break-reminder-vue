@@ -1,5 +1,5 @@
 import { IAdvancedSettings, IBreakSettings, ISettingOptions } from '@/types/settings';
-import { loadSettings, saveSettings, storageKeys } from '@/utils/setting';
+import { loadSettings, saveSettings } from '@/utils/setting';
 import { defineStore } from 'pinia';
 import { ref, watch } from 'vue';
 
@@ -10,10 +10,10 @@ const defaultShortBreakSettings: Readonly<IBreakSettings> = Object.freeze({
 });
 
 const loadShortBreakSettings = (): IBreakSettings =>
-  loadSettings(storageKeys.shortBreak, defaultShortBreakSettings);
+  loadSettings('shortBreak', defaultShortBreakSettings);
 
 const saveShortBreakSettings = (settings: IBreakSettings): void =>
-  saveSettings(storageKeys.shortBreak, settings);
+  saveSettings('shortBreak', settings);
 
 
 // long break
@@ -23,10 +23,10 @@ const defaultLongBreakSettings: Readonly<IBreakSettings> = Object.freeze({
 });
 
 const loadLongBreakSettings = (): IBreakSettings =>
-  loadSettings(storageKeys.longBreak, defaultLongBreakSettings);
+  loadSettings('longBreak', defaultLongBreakSettings);
 
 const saveLongBreakSettings = (settings: IBreakSettings): void =>
-  saveSettings(storageKeys.longBreak, settings);
+  saveSettings('longBreak', settings);
 
 
 // options
@@ -38,10 +38,10 @@ const defaultSettingOptions: Readonly<ISettingOptions> = Object.freeze({
 });
 
 const loadSettingOptions = (): ISettingOptions =>
-  loadSettings(storageKeys.options, defaultSettingOptions);
+  loadSettings('options', defaultSettingOptions);
 
 const saveSettingOptions = (settings: ISettingOptions): void =>
-  saveSettings(storageKeys.options, settings);
+  saveSettings('options', settings);
 
 
 // advanced
@@ -56,10 +56,10 @@ const defaultAdvancedSettings: Readonly<IAdvancedSettings> = Object.freeze({
 });
 
 const loadAdvancedSettings = (): IAdvancedSettings =>
-  loadSettings(storageKeys.advanced, defaultAdvancedSettings);
+  loadSettings('advanced', defaultAdvancedSettings);
 
 const saveAdvancedSettings = (settings: IAdvancedSettings): void =>
-  saveSettings(storageKeys.advanced, settings);
+  saveSettings('advanced', settings);
 
 
 const useSettingStore = defineStore('setting', () => {
