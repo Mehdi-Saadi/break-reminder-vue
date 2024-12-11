@@ -29,9 +29,8 @@ const loadSettings = <T extends object>(storageKey: string, defaultSettings: Rea
   }
 };
 
-const saveSettings = <T extends object>(storageKey: string, settings: T): void => {
+const saveSettings = <T extends object>(storageKey: string, settings: T): void =>
   localStorage.setItem(storageKey, JSON.stringify(settings));
-};
 
 
 // short break
