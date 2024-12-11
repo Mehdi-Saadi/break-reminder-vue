@@ -101,6 +101,15 @@ const useSettingStore = defineStore('setting', () => {
   const longBreakMessages = ref<BreakMessages>(loadLongBreakMessages());
   const advanced = ref<IAdvancedSettings>(loadAdvancedSettings());
 
+  const addBreakMessage = (message: string, breakType: 'long' | 'short'): void => {
+    const id = crypto.randomUUID();
+
+    if (breakType === 'short') {
+      shortBreakMessages.value[id] = message;
+    } else {
+      longBreakMessages.value[id] = message;
+    }
+  };
   const updateBreakMessageById = (id: UUID, message: string): void => {
     if (id in shortBreakMessages.value) {
       shortBreakMessages.value[id] = message;
@@ -136,6 +145,7 @@ const useSettingStore = defineStore('setting', () => {
     shortBreakMessages,
     longBreakMessages,
     advanced,
+    addBreakMessage,
     updateBreakMessageById,
     deleteBreakMessageById,
     resetSettingsToDefault,
