@@ -1,3 +1,5 @@
+import { UUID } from '@/types/general';
+
 type Minutes = number;
 type Seconds = number;
 
@@ -22,3 +24,5 @@ export interface IAdvancedSettings {
   screensaver: boolean;
   darkMode: boolean;
 }
+
+export type BreakMessages = Record<UUID, string>;
