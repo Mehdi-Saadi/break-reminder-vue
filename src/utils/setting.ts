@@ -29,21 +29,36 @@ const loadSettings = <T extends object>(storageKey: string, defaultSettings: Rea
   }
 };
 
+const saveSettings = <T extends object>(storageKey: string, settings: T): void => {
+  localStorage.setItem(storageKey, JSON.stringify(settings));
+};
+
+
 // short break
 const defaultShortBreakSettings: Readonly<IBreakSettings> = Object.freeze({
   intervalBetweenTwoBreaks: 20,
   breakDuration: 20,
 });
+
 export const loadShortBreakSettings = (): IBreakSettings =>
   loadSettings(storageKeys.shortBreak, defaultShortBreakSettings);
+
+export const saveShortBreakSettings = (settings: IBreakSettings): void =>
+  saveSettings(storageKeys.shortBreak, settings);
+
 
 // long break
 const defaultLongBreakSettings: Readonly<IBreakSettings> = Object.freeze({
   intervalBetweenTwoBreaks: defaultShortBreakSettings.intervalBetweenTwoBreaks * 3,
   breakDuration: defaultShortBreakSettings.breakDuration * 6,
 });
+
 export const loadLongBreakSettings = (): IBreakSettings =>
   loadSettings(storageKeys.longBreak, defaultLongBreakSettings);
+
+export const saveLongBreakSettings = (settings: IBreakSettings): void =>
+  saveSettings(storageKeys.longBreak, settings);
+
 
 // options
 const defaultSettingOptions: Readonly<ISettingOptions> = Object.freeze({
@@ -52,8 +67,13 @@ const defaultSettingOptions: Readonly<ISettingOptions> = Object.freeze({
   allowPostponingBreaks: false,
   postponeDuration: 5,
 });
+
 export const loadSettingOptions = (): ISettingOptions =>
   loadSettings(storageKeys.options, defaultSettingOptions);
+
+export const saveSettingOptions = (settings: ISettingOptions): void =>
+  saveSettings(storageKeys.options, settings);
+
 
 // advanced
 const defaultAdvancedSettings: Readonly<IAdvancedSettings> = Object.freeze({
@@ -65,5 +85,9 @@ const defaultAdvancedSettings: Readonly<IAdvancedSettings> = Object.freeze({
   screensaver: true,
   darkMode: false,
 });
+
 export const loadAdvancedSettings = (): IAdvancedSettings =>
   loadSettings(storageKeys.advanced, defaultAdvancedSettings);
+
+export const saveAdvancedSettings = (settings: IAdvancedSettings): void =>
+  saveSettings(storageKeys.advanced, settings);
