@@ -14,7 +14,6 @@ export default [
       // Possible Problems
       'no-duplicate-imports': ['error'],
       'no-template-curly-in-string': ['error'],
-      'no-use-before-define': ['error'],
       'require-atomic-updates': ['error'],
 
       // Suggestions
