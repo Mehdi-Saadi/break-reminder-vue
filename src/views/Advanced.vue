@@ -7,6 +7,9 @@ import MusicNoteIcon from '@/components/ui/icons/MusicNoteIcon.vue';
 import NetworkIntelligenceIcon from '@/components/ui/icons/NetworkIntelligenceIcon.vue';
 import NotificationsIcon from '@/components/ui/icons/NotificationsIcon.vue';
 import SettingItem from '@/components/setting/SettingItem.vue';
+import useSettingStore from '@/stores/setting.ts';
+
+const useSetting = useSettingStore();
 </script>
 
 <template>
@@ -26,7 +29,7 @@ import SettingItem from '@/components/setting/SettingItem.vue';
       </template>
 
       <template #button>
-        <CheckboxButton :model-value="true" />
+        <CheckboxButton v-model="useSetting.advanced.doNotDisturb" />
       </template>
     </SettingItem>
 
@@ -45,7 +48,7 @@ import SettingItem from '@/components/setting/SettingItem.vue';
       </template>
 
       <template #button>
-        <CheckboxButton :model-value="true" />
+        <CheckboxButton v-model="useSetting.advanced.notification" />
       </template>
     </SettingItem>
 
@@ -64,7 +67,7 @@ import SettingItem from '@/components/setting/SettingItem.vue';
       </template>
 
       <template #button>
-        <CheckboxButton :model-value="true" />
+        <CheckboxButton v-model="useSetting.advanced.audibleAlert" />
       </template>
     </SettingItem>
 
@@ -83,7 +86,7 @@ import SettingItem from '@/components/setting/SettingItem.vue';
       </template>
 
       <template #button>
-        <CheckboxButton :model-value="true" />
+        <CheckboxButton v-model="useSetting.advanced.smartPause" />
       </template>
     </SettingItem>
 
@@ -102,7 +105,7 @@ import SettingItem from '@/components/setting/SettingItem.vue';
       </template>
 
       <template #button>
-        <CheckboxButton :model-value="true" />
+        <CheckboxButton v-model="useSetting.advanced.screensaver" />
       </template>
     </SettingItem>
 
@@ -118,7 +121,7 @@ import SettingItem from '@/components/setting/SettingItem.vue';
       </template>
 
       <template #button>
-        <CheckboxButton :model-value="false" />
+        <CheckboxButton v-model="useSetting.advanced.darkMode" />
       </template>
     </SettingItem>
   </div>
