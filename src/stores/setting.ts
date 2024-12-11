@@ -1,3 +1,4 @@
+import { UUID } from '@/types/general'
 import { IAdvancedSettings, BreakMessages, IBreakSettings, ISettingOptions } from '@/types/settings';
 import { loadMessages, saveMessages } from '@/utils/message.ts';
 import { loadSettings, saveSettings } from '@/utils/setting';
@@ -100,6 +101,10 @@ const useSettingStore = defineStore('setting', () => {
   const longBreakMessages = ref<BreakMessages>(loadLongBreakMessages());
   const advanced = ref<IAdvancedSettings>(loadAdvancedSettings());
 
+  const deleteBreakMessageById = (id: UUID): void => {
+    delete shortBreakMessages.value[id];
+    delete longBreakMessages.value[id];
+  };
 
   const resetSettingsToDefault = (): void => {
     shortBreak.value = {...defaultShortBreakSettings};
@@ -125,6 +130,7 @@ const useSettingStore = defineStore('setting', () => {
     shortBreakMessages,
     longBreakMessages,
     advanced,
+    deleteBreakMessageById,
     resetSettingsToDefault,
   };
 });
