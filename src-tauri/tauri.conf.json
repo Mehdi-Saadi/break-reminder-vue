@@ -13,8 +13,8 @@
     "windows": [
       {
         "title": "break-reminder",
-        "width": 700,
-        "height": 450,
+        "width": 768,
+        "height": 480,
         "fullscreen": false,
         "resizable": false,
         "maximizable": false
