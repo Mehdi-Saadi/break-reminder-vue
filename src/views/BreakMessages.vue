@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AddIcon from '@/components/ui/icons/AddIcon.vue';
 import DeleteButton from '@/components/ui/buttons/DeleteButton.vue';
 import SettingItem from '@/components/setting/SettingItem.vue';
 import SettingSection from '@/components/setting/SettingSection.vue';
@@ -54,5 +55,15 @@ const { updateBreakMessageById, deleteBreakMessageById } = useSetting;
         </template>
       </SettingItem>
     </SettingSection>
+
+    <div class="flex items-center justify-end">
+      <button
+        class="space-x-1 flex items-center justify-center active:bg-[#eaeaea] hover:bg-[#ededed] active:dark:bg-[#2d2d2d] hover:dark:bg-[#292929] border border-gray-300 rounded px-1.5 py-1"
+        @click="console.log('clicked')"
+      >
+        <AddIcon class="size-4" />
+        <span class="text-xs pb-0.5">Add new message</span>
+      </button>
+    </div>
   </div>
 </template>
