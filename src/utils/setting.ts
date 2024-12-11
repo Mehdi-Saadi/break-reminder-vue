@@ -1,6 +1,6 @@
-type StorageKey = 'shortBreak' | 'longBreak' | 'options' | 'advanced';
+type SettingStorageKey = 'shortBreak' | 'longBreak' | 'options' | 'advanced';
 
-export const loadSettings = <T extends object>(storageKey: StorageKey, defaultSettings: Readonly<T>): T => {
+export const loadSettings = <T extends object>(storageKey: SettingStorageKey, defaultSettings: Readonly<T>): T => {
   const localData = localStorage.getItem(storageKey);
 
   if (!localData) {
@@ -22,5 +22,5 @@ export const loadSettings = <T extends object>(storageKey: StorageKey, defaultSe
   }
 };
 
-export const saveSettings = <T extends object>(storageKey: StorageKey, settings: T): void =>
+export const saveSettings = <T extends object>(storageKey: SettingStorageKey, settings: T): void =>
   localStorage.setItem(storageKey, JSON.stringify(settings));
