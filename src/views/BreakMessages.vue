@@ -23,7 +23,7 @@ const { updateBreakMessageById, deleteBreakMessageById } = useSetting;
             :value="value"
             class="bg-inherit w-full px-1 outline-gray-300"
             type="text"
-            @input="event => updateBreakMessageById(id as UUID, (event.target as HTMLInputElement).value)"
+            @blur="event => updateBreakMessageById(id as UUID, (event.target as HTMLInputElement).value)"
           />
         </template>
 
@@ -45,7 +45,7 @@ const { updateBreakMessageById, deleteBreakMessageById } = useSetting;
             :value="value"
             class="bg-inherit w-full px-1 outline-gray-300"
             type="text"
-            @input="event => updateBreakMessageById(id as UUID, (event.target as HTMLInputElement).value)"
+            @blur="event => updateBreakMessageById(id as UUID, (event.target as HTMLInputElement).value)"
           />
         </template>
 
