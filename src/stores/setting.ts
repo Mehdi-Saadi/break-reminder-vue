@@ -116,12 +116,12 @@ const useSettingStore = defineStore('setting', () => {
   };
 
   // save changes to local storage
-  watch(shortBreak, () => saveShortBreakSettings(shortBreak.value));
-  watch(longBreak, () => saveLongBreakSettings(longBreak.value));
-  watch(options, () => saveSettingOptions(options.value));
-  watch(shortBreakMessages, () => saveShortBreakMessages(shortBreakMessages.value));
-  watch(longBreakMessages, () => saveLongBreakMessages(longBreakMessages.value));
-  watch(advanced, () => saveAdvancedSettings(advanced.value));
+  watch(shortBreak, () => saveShortBreakSettings(shortBreak.value), { deep: true });
+  watch(longBreak, () => saveLongBreakSettings(longBreak.value), { deep: true });
+  watch(options, () => saveSettingOptions(options.value), { deep: true });
+  watch(shortBreakMessages, () => saveShortBreakMessages(shortBreakMessages.value), { deep: true });
+  watch(longBreakMessages, () => saveLongBreakMessages(longBreakMessages.value), { deep: true });
+  watch(advanced, () => saveAdvancedSettings(advanced.value), { deep: true });
 
   return {
     shortBreak,
