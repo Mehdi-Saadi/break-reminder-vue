@@ -1,6 +1,6 @@
 <template>
-  <div class="flex items-center justify-between">
-    <div class="pb-0.5">
+  <div class="flex items-center">
+    <div class="grow pe-4 pb-0.5">
       <slot name="text" />
     </div>
 
