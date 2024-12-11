@@ -1,4 +1,4 @@
-import { UUID } from '@/types/general'
+import { UUID } from '@/types/general';
 import { IAdvancedSettings, BreakMessages, IBreakSettings, ISettingOptions } from '@/types/settings';
 import { loadMessages, saveMessages } from '@/utils/message.ts';
 import { loadSettings, saveSettings } from '@/utils/setting';
