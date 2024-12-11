@@ -3,6 +3,7 @@ import CheckboxButton from '@/components/ui/buttons/CheckboxButton.vue';
 import DoNotDisturbOnIcon from '@/components/ui/icons/DoNotDisturbOnIcon.vue';
 import SettingItem from '@/components/setting/SettingItem.vue';
 import MusicNoteIcon from '@/components/ui/icons/MusicNoteIcon.vue';
+import NetworkIntelligenceIcon from '@/components/ui/icons/NetworkIntelligenceIcon.vue';
 import NotificationsIcon from '@/components/ui/icons/NotificationsIcon.vue';
 </script>
 
@@ -64,7 +65,16 @@ import NotificationsIcon from '@/components/ui/icons/NotificationsIcon.vue';
     </SettingItem>
     <SettingItem>
       <template #text>
-        Smart Pause
+        <div class="flex items-center space-x-1">
+          <!-- icon -->
+          <NetworkIntelligenceIcon class="size-5" />
+
+          <!-- text -->
+          <div class="flex flex-col">
+            <div class="font-semibold">Smart Pause</div>
+            <div class="text-xs text-[#5c5c5c] dark:text-[#cccccc]">Pause reminder if system is idle</div>
+          </div>
+        </div>
       </template>
 
       <template #button>
