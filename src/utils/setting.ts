@@ -7,6 +7,28 @@ const storageKeys = Object.freeze({
   advanced: 'advanced',
 });
 
+const loadSettings = <T extends object>(storageKey: string, defaultSettings: Readonly<T>): T => {
+  const localData = localStorage.getItem(storageKey);
+
+  if (!localData) {
+    return defaultSettings;
+  }
+
+  try {
+    const parsedData = JSON.parse(localData);
+
+    for (const key in parsedData) {
+      if (!(key in defaultSettings)) {
+        return defaultSettings;
+      }
+    }
+
+    return {...defaultSettings, ...parsedData};
+  } catch {
+    return defaultSettings;
+  }
+};
+
 // short break
 const defaultShortBreakSettings: Readonly<IBreakSettings> = Object.freeze({
   intervalBetweenTwoBreaks: 20,
