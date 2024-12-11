@@ -3,6 +3,9 @@ import CheckboxButton from '@/components/ui/buttons/CheckboxButton.vue';
 import NumberField from '@/components/setting/NumberField.vue';
 import SettingItem from '@/components/setting/SettingItem.vue';
 import SettingSection from '@/components/setting/SettingSection.vue';
+import useSettingStore from '@/stores/setting.ts';
+
+const useSetting = useSettingStore();
 </script>
 
 <template>
@@ -16,10 +19,10 @@ import SettingSection from '@/components/setting/SettingSection.vue';
 
         <template #button>
           <NumberField
-            :default-value="20"
+            :default-value="useSetting.shortBreak.intervalBetweenTwoBreaks"
             :max="120"
             :step="5"
-            @update="(newVal) => console.log(newVal)"
+            @update="newVal => useSetting.shortBreak.intervalBetweenTwoBreaks = newVal"
           />
         </template>
       </SettingItem>
@@ -31,10 +34,10 @@ import SettingSection from '@/components/setting/SettingSection.vue';
 
         <template #button>
           <NumberField
-            :default-value="20"
+            :default-value="useSetting.shortBreak.breakDuration"
             :max="120"
             :step="5"
-            @update="(newVal) => console.log(newVal)"
+            @update="newVal => useSetting.shortBreak.breakDuration = newVal"
           />
         </template>
       </SettingItem>
@@ -49,10 +52,10 @@ import SettingSection from '@/components/setting/SettingSection.vue';
 
         <template #button>
           <NumberField
-            :default-value="20"
+            :default-value="useSetting.longBreak.intervalBetweenTwoBreaks"
             :max="120"
-            :step="5"
-            @update="(newVal) => console.log(newVal)"
+            :step="useSetting.shortBreak.intervalBetweenTwoBreaks"
+            @update="newVal => useSetting.longBreak.intervalBetweenTwoBreaks = newVal"
           />
         </template>
       </SettingItem>
@@ -64,10 +67,10 @@ import SettingSection from '@/components/setting/SettingSection.vue';
 
         <template #button>
           <NumberField
-            :default-value="20"
+            :default-value="useSetting.longBreak.breakDuration"
             :max="120"
             :step="5"
-            @update="(newVal) => console.log(newVal)"
+            @update="newVal => useSetting.longBreak.breakDuration = newVal"
           />
         </template>
       </SettingItem>
@@ -82,10 +85,10 @@ import SettingSection from '@/components/setting/SettingSection.vue';
 
         <template #button>
           <NumberField
-            :default-value="10"
+            :default-value="useSetting.options.timeToPrepareForBreak"
             :max="120"
             :step="5"
-            @update="(newVal) => console.log(newVal)"
+            @update="newVal => useSetting.options.timeToPrepareForBreak = newVal"
           />
         </template>
       </SettingItem>
@@ -96,9 +99,7 @@ import SettingSection from '@/components/setting/SettingSection.vue';
         </template>
 
         <template #button>
-          <CheckboxButton
-            :model-value="false"
-          />
+          <CheckboxButton v-model="useSetting.options.strictBreak" />
         </template>
       </SettingItem>
 
@@ -108,9 +109,7 @@ import SettingSection from '@/components/setting/SettingSection.vue';
         </template>
 
         <template #button>
-          <CheckboxButton
-            :model-value="false"
-          />
+          <CheckboxButton v-model="useSetting.options.allowPostponingBreaks" />
         </template>
       </SettingItem>
 
@@ -121,11 +120,11 @@ import SettingSection from '@/components/setting/SettingSection.vue';
 
         <template #button>
           <NumberField
-            :default-value="5"
+            :default-value="useSetting.options.postponeDuration"
             :max="120"
             :step="5"
             disabled
-            @update="(newVal) => console.log(newVal)"
+            @update="newVal => useSetting.options.postponeDuration = newVal"
           />
         </template>
       </SettingItem>
