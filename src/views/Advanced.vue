@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CheckboxButton from '@/components/ui/buttons/CheckboxButton.vue';
+import DarkModeIcon from '@/components/ui/icons/DarkModeIcon.vue';
 import DoNotDisturbOnIcon from '@/components/ui/icons/DoNotDisturbOnIcon.vue';
 import LockIcon from '@/components/ui/icons/LockIcon.vue';
 import MusicNoteIcon from '@/components/ui/icons/MusicNoteIcon.vue';
@@ -9,7 +10,7 @@ import SettingItem from '@/components/setting/SettingItem.vue';
 </script>
 
 <template>
-  <div class="flex flex-col space-y-3 p-4 text-sm">
+  <div class="flex flex-col space-y-5 p-4 text-sm">
     <SettingItem>
       <template #text>
         <div class="flex items-center space-x-1">
@@ -102,6 +103,22 @@ import SettingItem from '@/components/setting/SettingItem.vue';
 
       <template #button>
         <CheckboxButton :model-value="true" />
+      </template>
+    </SettingItem>
+
+    <SettingItem>
+      <template #text>
+        <div class="flex items-center space-x-1">
+          <!-- icon -->
+          <DarkModeIcon class="size-5" />
+
+          <!-- text -->
+          <div class="font-semibold">Dark Mode</div>
+        </div>
+      </template>
+
+      <template #button>
+        <CheckboxButton :model-value="false" />
       </template>
     </SettingItem>
   </div>
