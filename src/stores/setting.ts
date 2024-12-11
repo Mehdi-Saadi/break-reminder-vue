@@ -101,11 +101,17 @@ const useSettingStore = defineStore('setting', () => {
   const longBreakMessages = ref<BreakMessages>(loadLongBreakMessages());
   const advanced = ref<IAdvancedSettings>(loadAdvancedSettings());
 
+  const updateBreakMessageById = (id: UUID, message: string): void => {
+    if (id in shortBreakMessages.value) {
+      shortBreakMessages.value[id] = message;
+    } else if (id in longBreakMessages.value) {
+      longBreakMessages.value[id] = message;
+    }
+  };
   const deleteBreakMessageById = (id: UUID): void => {
     delete shortBreakMessages.value[id];
     delete longBreakMessages.value[id];
   };
-
   const resetSettingsToDefault = (): void => {
     shortBreak.value = {...defaultShortBreakSettings};
     longBreak.value = {...defaultLongBreakSettings};
@@ -130,6 +136,7 @@ const useSettingStore = defineStore('setting', () => {
     shortBreakMessages,
     longBreakMessages,
     advanced,
+    updateBreakMessageById,
     deleteBreakMessageById,
     resetSettingsToDefault,
   };
