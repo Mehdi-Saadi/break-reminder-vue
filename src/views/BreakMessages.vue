@@ -6,7 +6,7 @@ import useSettingStore from '@/stores/setting.ts';
 import { UUID } from '@/types/general';
 
 const useSetting = useSettingStore();
-const { deleteBreakMessageById } = useSetting;
+const { updateBreakMessageById, deleteBreakMessageById } = useSetting;
 </script>
 
 <template>
@@ -19,7 +19,12 @@ const { deleteBreakMessageById } = useSetting;
         class="pb-3"
       >
         <template #text>
-          {{ value }}
+          <input
+            :value="value"
+            class="bg-inherit w-full px-1 outline-gray-300"
+            type="text"
+            @input="event => updateBreakMessageById(id as UUID, (event.target as HTMLInputElement).value)"
+          />
         </template>
 
         <template #button>
@@ -36,7 +41,12 @@ const { deleteBreakMessageById } = useSetting;
         class="pb-3"
       >
         <template #text>
-          {{ value }}
+          <input
+            :value="value"
+            class="bg-inherit w-full px-1 outline-gray-300"
+            type="text"
+            @input="event => updateBreakMessageById(id as UUID, (event.target as HTMLInputElement).value)"
+          />
         </template>
 
         <template #button>
