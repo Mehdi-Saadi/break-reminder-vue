@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import RemoveIcon from '../../icons/RemoveIcon.vue';
-import SquareButton from './SquareButton.vue';
+import RemoveIcon from '@/components/ui/icons/RemoveIcon.vue';
+import SquareButton from '@/components/ui/buttons/SquareButton.vue';
 </script>
 
 <template>

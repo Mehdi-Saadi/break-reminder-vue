@@ -1,7 +1,7 @@
-import Advanced from '../views/Advanced.vue';
-import AppLayout from '../layouts/AppLayout.vue';
-import BreakMessages from '../views/BreakMessages.vue';
-import Settings from '../views/Settings.vue';
+import Advanced from '@/views/Advanced.vue';
+import AppLayout from '@/layouts/AppLayout.vue';
+import BreakMessages from '@/views/BreakMessages.vue';
+import Settings from '@/views/Settings.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({

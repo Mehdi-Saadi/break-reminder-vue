@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import CheckboxButton from '../components/setting/buttons/CheckboxButton.vue';
-import NumberField from '../components/setting/NumberField.vue';
-import SettingItem from '../components/setting/SettingItem.vue';
-import SettingSection from '../components/setting/SettingSection.vue';
+import CheckboxButton from '@/components/ui/buttons/CheckboxButton.vue';
+import NumberField from '@/components/setting/NumberField.vue';
+import SettingItem from '@/components/setting/SettingItem.vue';
+import SettingSection from '@/components/setting/SettingSection.vue';
 </script>
 
 <template>

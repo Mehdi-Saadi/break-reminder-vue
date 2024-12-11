@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import Sidebar from './partials/Sidebar.vue';
-
+import Sidebar from '@/layouts/partials/Sidebar.vue';
 </script>
 
 <template>

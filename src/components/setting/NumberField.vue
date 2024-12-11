@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AddButton from './buttons/AddButton.vue';
-import RemoveButton from './buttons/RemoveButton.vue';
+import AddButton from '@/components/ui/buttons/AddButton.vue';
+import RemoveButton from '@/components/ui/buttons/RemoveButton.vue';
 import { ref, watch } from 'vue';
 
 const props = defineProps<{

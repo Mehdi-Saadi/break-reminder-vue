@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AddIcon from '../../icons/AddIcon.vue';
-import SquareButton from './SquareButton.vue';
+import AddIcon from '@/components/ui/icons/AddIcon.vue';
+import SquareButton from '@/components/ui/buttons/SquareButton.vue';
 </script>
 
 <template>

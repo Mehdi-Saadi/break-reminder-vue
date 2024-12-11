@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import AdvancedButton from '../../components/sidebar/buttons/AdvancedButton.vue';
-import BreakMessagesButton from '../../components/sidebar/buttons/BreakMessagesButton.vue';
-import SettingsButton from '../../components/sidebar/buttons/SettingsButton.vue';
-
+import AdvancedButton from '@/components/sidebar/buttons/AdvancedButton.vue';
+import BreakMessagesButton from '@/components/sidebar/buttons/BreakMessagesButton.vue';
+import SettingsButton from '@/components/sidebar/buttons/SettingsButton.vue';
 </script>
 
 <template>
