@@ -21,12 +21,19 @@
       }
     ],
     "security": {
-      "csp": null
-    },
-    "trayIcon": {
-      "id": "break-reminder-tray",
-      "iconPath": "icons/icon.png",
-      "tooltip": "Break Reminder"
+      "csp": null,
+      "capabilities": [
+        {
+          "identifier": "app-capabilities",
+          "description": "Application capabilities used for all windows",
+          "windows": ["*"],
+          "permissions": [
+            "core:default",
+            "core:window:allow-hide",
+            "core:window:allow-show"
+          ]
+        }
+      ]
     }
   },
   "bundle": {
