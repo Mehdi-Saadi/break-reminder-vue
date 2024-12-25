@@ -1,5 +1,5 @@
 import { TrayIcon, TrayIconEvent } from '@tauri-apps/api/tray';
-import { getCurrentWindow } from '@tauri-apps/api/window';
+import { currentWindow } from '@/core/window';
 import trayMenu from '@/core/tray/menu.ts';
 
 const tray = await TrayIcon.new({
@@ -13,7 +13,7 @@ const tray = await TrayIcon.new({
       event.button === 'Left' &&
       event.buttonState === 'Up'
     ) {
-      await getCurrentWindow().show();
+      await currentWindow.show();
     }
   }
 });
