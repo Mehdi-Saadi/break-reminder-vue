@@ -11,3 +11,7 @@ app.use(createPinia());
 app.use(router);
 
 app.mount('#app');
+
+// core scripts
+import '@/core/window';
+import '@/core/tray';
